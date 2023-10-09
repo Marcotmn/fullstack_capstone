@@ -1,0 +1,41 @@
+.container {
+
+  width: 100%; /* Imposta la larghezza al 100% del viewport */
+  padding:15px;
+  margin-top: 200px;
+}
+
+.form
+{
+  margin-top: 200px;
+
+}
+
+h1 {
+  color: rgb(28, 28, 35);
+  font-weight: 700;
+  font-size: 32px;
+}
+
+h5{
+  color:rgb(28, 28, 35);
+  font-weight:400;
+  font-size: 12px;
+}
+
+.btn
+{
+  background-color: rgb(48, 241, 183);
+  color: white;
+
+
+}
+
+
+.torna {
+  font-size: 16px;
+  color: rgb(28, 28, 35);
+  width: 100%;
+  background-color: transparent;
+  border-color: rgb(48, 241, 183);
+}

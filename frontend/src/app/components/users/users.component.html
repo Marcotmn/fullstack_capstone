@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="d-flex row align-items-center justify-content-between text-start">
+    <div class="col-lg-3 col-md-12">
+      <h1>Dettagli utente&lt;/&gt;</h1>
+      <button
+        type="submit"
+        class="btn torna mb-4"
+        [routerLink]="['/annunci/bacheca-annunci']"
+      >
+        < Torna agli annunci
+      </button>
+    </div>
+
+    <!--DIV SCHEDA PROFILO-->
+    <div class="text-center col-sm-12 col-md-12 col-lg-5">
+      <div *ngIf="utente">
+        <div class="info-principali">
+          <img
+            src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2864&q=80"
+            alt=""
+            srcset=""
+            class="img-fluid img-profilo"
+          />
+          <h2>{{ utente.nome }} {{ utente.cognome }}</h2>
+          <p><b>Username:</b> {{ utente.username }}</p>
+          <p><b>Email:</b> {{ utente.email }}</p>
+
+          <p><b>Indirizzo:</b> {{ utente.indirizzo }}</p>
+          <p><b>Numero di telefono:</b> {{ utente.numeroTelefono }}</p>
+          <p><b>Tipo utente:</b> {{ utente.ruolo }}</p>
+
+          <!-- PRIVATO -->
+          <div *ngIf="utente.ruolo === 'PRIVATO'">
+            <p><b>Codice Fiscale:</b> {{ utente.codiceFiscale }}</p>
+          </div>
+
+          <!-- AZIENDA -->
+          <div *ngIf="utente.ruolo === 'AZIENDA'">
+            <p><b>Nome Azienda:</b> {{ utente.nomeAzienda }}</p>
+            <p><b>Tipo Azienda:</b> {{ utente.tipoAzienda }}</p>
+            <p><b>Partita Iva Aziendale:</b> {{ utente.partitaIvaAzienda }}</p>
+            <p><b>Sito web:</b> {{ utente.sitoWeb }}</p>
+          </div>
+
+          <div *ngIf="utente.ruolo === 'SVILUPPATORE'">
+            <p><b>Titolo:</b> {{ utente.titolo }}</p>
+            <p><b>Bio:</b> {{ utente.bio }}</p>
+            <p><b>Portfolio:</b> {{ utente.linkPortfolio }}</p>
+            <p><b>Competenze:</b> {{ utente.competenze }}</p>
+            <p>
+              <b>Partita Iva Sviluppatore:</b>
+              {{ utente.partitaIvaSviluppatore }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIV PER GLI ANNUNCI PUBBLICATI O LE PROPOSTE-->
+    <div
+      class="text-start col-lg-4 col-md-12 mt-5"
+      *ngIf="
+        utente && (utente.ruolo === 'PRIVATO' || utente.ruolo === 'AZIENDA')
+      "
+    >
+      <h3 class="mt-5">Annunci pubblicati</h3>
+      <div style="max-height: 260px; overflow-y: auto">
+        <div class *ngFor="let annuncio of annunci">
+          <a [routerLink]="['/annunci', annuncio.id]" class="">
+            <h2 class="card-title">{{ annuncio.titolo }}</h2>
+            <h5 class="info-ann">
+              <b>Pubblicato il:</b> {{ annuncio.dataPubblicazione }} <br />
+              <b>Stato:</b> {{ annuncio.statoAnnuncio }} <br /><b
+                >Budget previsto:</b
+              >
+              €{{ annuncio.budgetPrevisto }}
+            </h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-start col-lg-4 col-md-12 mt-5"
+      *ngIf="utente && utente.ruolo === 'SVILUPPATORE'"
+    >
+      <h3 class="mt-5">Proposte inviate</h3>
+      <div style="max-height: 260px; overflow-y: auto">
+        <div *ngFor="let proposta of proposte">
+          <a
+            [routerLink]="['/proposte-details', proposta.id]"
+            class="scheda-proposta"
+          >
+            <h2 class="card-title">ID proposta: {{ proposta.id }}</h2>
+            <h5 class="info-ann">
+              <b>Titolo annuncio:</b> {{ proposta.annuncio.titolo }} <br />
+              <b>Budget cliente:</b> €{{ proposta.annuncio.budgetPrevisto }}
+            </h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

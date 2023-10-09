@@ -1,0 +1,57 @@
+<div class="container text-start">
+  <div class="row">
+    <div class="col-lg-3 col-md-12">
+      <h1>Crea una proposta CODIFY&lt;/&gt;</h1>
+      <h5>
+        Inserisci tutti i dettagli rilevanti per la tua proposta e attendi la
+        risposta dell'annuncio.
+      </h5>
+      <button
+        type="submit"
+        class="btn torna mb-2"
+        [routerLink]="['/annunci', annuncioId]"
+      >
+        < Torna all'annuncio
+      </button>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-7">
+      <form [formGroup]="creaPropostaForm" (ngSubmit)="onSubmit()">
+        <!-- Descrizione -->
+        <div class="form-group">
+          <label for="descrizione">Descrizione</label>
+          <textarea
+            formControlName="descrizione"
+            id="descrizione"
+            class="form-control"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Importo Proposto -->
+        <div class="form-group">
+          <label for="importoProposto">Importo Proposto</label>
+          <input
+            formControlName="importoProposto"
+            type="number"
+            id="importoProposto"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <!-- Bottone di Submit -->
+        <button
+          type="submit"
+          class="btn col-12 mt-2"
+          [disabled]="!creaPropostaForm.valid"
+        >
+          Invia Proposta
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

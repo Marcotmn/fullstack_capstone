@@ -1,0 +1,76 @@
+<div
+  class="content d-flex justify-content-center align-items-center"
+  style="flex-direction: column"
+>
+  <div class="form text-start">
+    <h1>Crea un annuncio CODIFY&lt;/&gt;</h1>
+    <h5>
+      Inserisci tutti i dati rilevanti dell'intervento di cui hai bisogno,
+      rilassati e attendi i feedback degli sviluppatori
+    </h5>
+    <!-- crea-annunci.component.html -->
+
+    <form [formGroup]="creaAnnuncioForm" (ngSubmit)="onSubmit()">
+      <!-- Titlo -->
+      <div class="form-group">
+        <label for="titolo">Titolo</label>
+        <input
+          formControlName="titolo"
+          type="text"
+          id="titolo"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Descrizione -->
+      <div class="form-group">
+        <label for="descrizione">Descrizione</label>
+        <input
+          formControlName="descrizione"
+          type="text"
+          id="descrizione"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Categoria -->
+      <div class="form-group">
+        <label for="categoria">Categoria</label>
+        <select
+          formControlName="categoria"
+          id="categoria"
+          class="form-control"
+          required
+        >
+          <option *ngFor="let categoria of enumKeys" [value]="categoria">
+            {{ getCategoriaDisplayValue(categoria) }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Budget previsto -->
+      <div class="form-group">
+        <label for="budgetPrevisto">Budget Previsto</label>
+        <input
+          formControlName="budgetPrevisto"
+          type="number"
+          id="budgetPrevisto"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- Bottone di Submit -->
+      <button
+        type="submit"
+        class="btn col-12 mt-3"
+        [disabled]="!creaAnnuncioForm.valid"
+      >
+        Pubblica annuncio
+      </button>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

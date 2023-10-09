@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="d-flex row align-items-start justify-content-between text-start">
+    <div class="col-sm-12 col-md-12 col-lg-3">
+      <h1>Dettagli annuncio&lt;/&gt;</h1>
+      <button
+        type="submit"
+        class="btn torna mb-2"
+        [routerLink]="['/annunci/bacheca-annunci']"
+      >
+        < Torna agli annunci
+      </button>
+      <button
+        *ngIf="!isSviluppatore && isProprietarioAnnuncio"
+        type="submit"
+        class="btn modifica-elimina mb-2"
+        [routerLink]="['/annunci/bacheca-annunci']"
+      >
+        Modifica
+      </button>
+      <button
+        *ngIf="!isSviluppatore && isProprietarioAnnuncio"
+        type="submit"
+        class="btn modifica-elimina mb-2"
+        [routerLink]="['/annunci/bacheca-annunci']"
+      >
+        Elimina
+      </button>
+      <div *ngIf="isSviluppatore">
+        <button
+          type="button"
+          class="btn col-12 proposta"
+          [routerLink]="['/crea-proposta', annuncioId]"
+        >
+          Fai una proposta
+        </button>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-5">
+      <div *ngIf="annuncio">
+        <div class="card p-3">
+          <div class="card-body">
+            <p class="stato-annuncio">
+              Stato annuncio: {{ annuncio.statoAnnuncio }}
+            </p>
+            <!--TITOLO-->
+            <h2 class="card-title">{{ annuncio.titolo }}</h2>
+            <!--CATEGORIAA-->
+            <p class="categoria card-text mb-1">
+              {{ annuncio.categoria | categoriaConversion }} - Pubblicato il
+              {{ annuncio.dataPubblicazione }}
+            </p>
+            <img
+              src="https://images.unsplash.com/photo-1529338296731-c4280a44fc48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80"
+              alt="Immagine"
+              style="width: 455px; height: 200px; object-fit: cover"
+              class="immagine-annuncio-details mb-3"
+            />
+
+            <!--DESCRIZIONE-->
+            <p class="descrizione card-text">
+              <b>Descrizione</b> <br />{{ annuncio.descrizione }}
+            </p>
+            <div class="d-flex justify-content-between align-items-end">
+              <!--RUOLO UTENTE E NOME-->
+              <div class="utente">
+                <ng-container
+                  *ngIf="
+                    annuncio.utente.ruolo === 'AZIENDA';
+                    else privatoTemplate
+                  "
+                >
+                  <h2 class="utente-pubblicante">
+                    {{ annuncio.utente.ruolo }} <br />
+                    {{ annuncio.utente.nomeAzienda }}
+                  </h2>
+                </ng-container>
+
+                <ng-template #privatoTemplate>
+                  <h2 class="utente-pubblicante">
+                    {{ annuncio.utente.ruolo }} <br />{{ annuncio.utente.nome }}
+                    {{ annuncio.utente.cognome }}
+                  </h2>
+                </ng-template>
+              </div>
+              <!--BUDGET-->
+
+              <p class="budget-card card-text">
+                €{{ annuncio.budgetPrevisto }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-start col-sm-12 col-md-12 col-lg-4 mt-5">
+      <h1 *ngIf="!isSviluppatore && isProprietarioAnnuncio">
+        Proposte ricevute
+      </h1>
+      <div
+        *ngFor="let proposta of proposte"
+        class="mb-5"
+        style="max-height: 260px; overflow-y: auto"
+      >
+        <h5>{{ proposta.descrizione }}</h5>
+        <p class="descrizione mb-0">
+          <b>Stato:</b> {{ proposta.statoProposta }}
+        </p>
+        <p><b>Importo proposto:</b> €{{ proposta.importoProposto }}</p>
+        <button
+          class="btn accetta-rifiuta me-2"
+          (click)="accettaProposta(proposta)"
+        >
+          Accetta
+        </button>
+        <button class="btn accetta-rifiuta" (click)="rifiutaProposta(proposta)">
+          Rifiuta
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

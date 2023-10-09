@@ -1,0 +1,80 @@
+.container {
+
+  width: 100%; /* Imposta la larghezza al 100% del viewport */
+  padding:15px;
+  margin-top: 200px;
+}
+
+
+.info-principali {
+
+  color: rgb(28, 28, 35);
+
+}
+
+.img-profilo{
+  border-radius: 50%; /* Imposta il bordo rotondo */
+  width: 100px; /* Imposta la larghezza desiderata */
+  height: 100px; /* Imposta l'altezza desiderata (ugualmente a width per ottenere un cerchio) */
+  object-fit: cover; /* Assicura che l'immagine si adatti al cerchio senza deformazioni */
+  margin-bottom: 10px;
+}
+
+.altre-info{
+  padding: 15px;
+}
+
+.torna{
+  font-size: 16px;
+  border-color: rgb(48, 241, 183);
+  background-color: transparent;
+  color: rgb(28, 28, 35);
+  width: 100%;
+}
+
+.proposta{
+  background-color: rgb(48, 241, 183);
+  color: white;
+  width: 100%;
+  }
+
+h1 {
+    color: rgb(28, 28, 35);
+    font-weight: 700;
+    font-size: 28px;
+
+  }
+
+  h2{
+    font-weight: 700;
+    color: rgb(28, 28, 35);
+    font-size: 32px;
+  }
+
+  h3{
+    font-weight: 700;
+
+  }
+
+p{
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+a{
+  font-size: 14px;
+  text-decoration:none;
+  color: rgb(28, 28, 35);
+  font-weight: 500;
+
+}
+
+.card-title{
+  font-size: 14px;
+
+}
+
+.info-ann{
+  font-size: 12px;
+  margin-bottom: 25px;
+}

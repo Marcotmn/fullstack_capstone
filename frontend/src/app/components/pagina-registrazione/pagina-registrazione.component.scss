@@ -1,0 +1,31 @@
+h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+h3{
+  color:white;
+  font-weight:700;
+}
+
+
+.content{
+  position: relative;  // permette al contenuto di apparire sopra l'immagine
+  padding:15px;
+  background-color: rgb(104, 54, 221);
+  color:white;
+  
+}
+
+
+.card-title{
+  color: black;
+}
+
+.btn {
+  background-color: rgb(48, 241, 183);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}

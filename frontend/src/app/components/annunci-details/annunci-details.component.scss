@@ -1,0 +1,104 @@
+.container {
+
+  width: 100%; /* Imposta la larghezza al 100% del viewport */
+  padding:15px;
+  margin-top: 200px;
+}
+
+.torna{
+  font-size: 16px;
+  font-weight: 500;
+  border-color: rgb(48, 241, 183);;
+  background-color: transparent;
+  color: rgb(28, 28, 35);
+  width: 100%;
+}
+
+.proposta{
+  background-color: rgb(48, 241, 183);
+  color: white;
+  width: 100%;
+  }
+
+  h1 {
+    color: rgb(28, 28, 35);
+    font-weight: 700;
+    font-size: 32px;
+  }
+
+h5{
+  color: rgb(28, 28, 35);
+  font-size: 12px;
+}
+
+.stato-annuncio{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.categoria{
+  font-weight: 600;
+  font-size: 8px;
+
+}
+
+.descrizione {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.budget-card{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.data-card{
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.utente-pubblicante {
+  font-size: 18px;
+  font-weight: 700;
+  color:rgb(28, 28, 35);
+  ;
+}
+
+.card-header
+{
+  margin: 0px;
+  font-weight: 600;
+}
+
+.card{
+  border-style: 1px;
+  border-radius: 3px;
+
+}
+
+.testo-data{
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+
+.accetta-rifiuta{
+  font-size: 13px;
+  font-weight: 500;
+  background-color:  rgb(48, 241, 183);
+  color: white;
+
+}
+
+.modifica-elimina{  font-size: 16px;
+  background-color: rgb(48, 241, 183);
+  color: white;
+  font-weight: 500;
+  width: 100%;
+
+}

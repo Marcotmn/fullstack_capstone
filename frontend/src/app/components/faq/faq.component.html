@@ -1,0 +1,57 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 120vh; flex-direction: row">
+
+    <!-- Sezione Testo -->
+    <div class="col-sm-12 col-md-12 col-lg-5 d-flex align-items-center">
+      <div class="text-sm-start text-md-start text-lg-start text-xl-start">
+        <h1>Come funziona CODIFY&lt;/&gt;?</h1>
+        <h3>
+          CODIFY&lt;/&gt; è stato pensato per mettere in contatto diretto
+          Aziende o Privati con gli Sviluppatori di tutto il mondo
+        </h3>
+        <p>
+          Ogni utente "Azienda" o "Privato" ha la possibilità di creare degli
+          annunci per singole collaborazioni o prestazioni. All'interno di ogni
+          annuncio vengono indicate le specifiche della prestazione (un titolo,
+          una descrizione, l'area di intervento, un budget previsto):
+        </p>
+        <h3>es: Implementazione di un sistema di pagamento</h3>
+        <p>
+          cerchiamo uno sviluppatore web che implementi un sistema di pagamento
+          che si appoggi su servizi terzi come PayPal
+        </p>
+
+        <p><b>Tipologia annuncio:</b> SVILUPPO WEB</p>
+        <p><b>Budget previsto:</b> €1000</p>
+
+        <p>
+          Dall'altro lato uno sviluppatore che ha accesso alla bacheca con tutti
+          gli annunci, può rispondere ad ogni annuncio con una proposta di
+          intervento descrivendone i dettagli (ad esempio le tecnologie
+          utilizzate) e proponendo un budget; se l'Azienda o il Privato
+          accettano la proposta, lo sviluppatore potrà lavorare alla task; Alla
+          fine l'Azienda o il Privato effettueranno il pagamento e riceveranno
+          in maniera automatica la fattura!
+        </p>
+        <button
+            [routerLink]="['/annunci/nuovo-annuncio']"
+            class="btn btn-custom"
+            type="button"
+          >
+            Crea un annuncio
+          </button>
+      </div>
+    </div>
+    <!-- Sezione Immagine -->
+    <div
+      class="col-sm d-none col-lg-7 d-lg-flex justify-content-center align-items-center"
+    >
+    <div class="square-container">
+      <img
+        src="assets/img/procreator-ux-design-studio-VzJjPuk53sk-unsplash.jpg"
+        alt="Descrizione Immagine"
+        class="square-image"
+      />
+    </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,46 @@
+.background-image {
+  height: 100vh;  // copre l'intera altezza della viewport
+  width: 100%;  // copre l'intera larghezza
+  overflow: auto;  // permette lo scrolling se il contenuto è più lungo della viewport
+  img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;  // assicura che l'immagine copra l'intera area senza distorcere l'aspetto
+      filter: brightness(50%);
+
+  }
+  .content {
+      position: relative;  // permette al contenuto di apparire sopra l'immagine
+      padding:15px;
+  }
+}
+h1{
+  color: white;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+h5
+{
+  color:white;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.btn {
+  background-color: rgb(48, 241, 183);
+  color: white;
+  font-weight: 600;
+}
+
+.btn-custom {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+
+

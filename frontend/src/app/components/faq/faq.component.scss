@@ -1,0 +1,58 @@
+.container{
+  width: 100%; /* Imposta la larghezza al 100% del viewport */
+  padding:15px;
+
+}
+
+/* Stili per l'immagine */
+.square-image {
+  width: 100%;
+  height: auto; /* Per mantenere l'aspetto proporzionale dell'immagine */
+  display: block; /* Rimuove spazi vuoti sotto l'immagine */
+}
+
+.btn
+{
+background-color: rgb(48, 241, 183);
+color: white;
+width: 100%;
+}
+
+
+/* Per dispositivi mobile con larghezza schermo fino a 767px */
+@media (max-width: 767px) {
+  .container {
+      width: 100%; /* Oppure una specifica dimensione in percentuale o in px */
+      margin-top: 100px;
+
+      padding: 0.5rem 1rem;
+  }
+}
+
+
+h1{
+  color: rgb(48, 241, 183);
+  font-weight: 700;
+  font-size: 32px;
+}
+h3{
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(28, 28, 35);
+}
+p{
+font-size: 12px;
+color: rgb(28, 28, 35);
+}
+
+h5{
+  color: rgb(28, 28, 35);
+}
+
+.square-container {
+  width: 700px; /* Imposta la larghezza desiderata */
+  height: 600px; /* Imposta l'altezza desiderata */
+  overflow: hidden; /* Nasconde qualsiasi contenuto in eccesso */
+  margin-left: 50px;
+}
+

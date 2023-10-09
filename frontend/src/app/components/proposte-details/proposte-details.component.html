@@ -1,0 +1,46 @@
+<div class="container text-start">
+  <div class="row">
+    <div class="col-lg-3 col-md-12">
+      <h1>Dettagli proposta</h1>
+      <button type="submit" class="btn torna mb-3" [routerLink]="['/users']">
+        < Torna al profilo
+      </button>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-7">
+      <div *ngIf="proposta">
+        <div class="card p-3">
+          <div class="card-body">
+            <!-- TITOLO PROPOSTA -->
+            <p class="stato-proposta card-text mb-3">
+              Stato proposta {{ proposta.statoProposta }}
+            </p>
+            <h2 class="descrizione-proposta mb-5">
+              {{ proposta.descrizione }}
+            </h2>
+            <!-- IMPORTO PROPOSTO -->
+            <p class="info-proposta card-text mb-1">
+              Importo proposto: €{{ proposta.importoProposto }}
+            </p>
+          </div>
+          <div *ngIf="annuncio">
+            <div class="card p-3 mt-4">
+              <div class="card-body">
+                <!-- TITOLO ANNUNCIO -->
+                <h2 class="card-title">{{ annuncio.titolo }}</h2>
+                <!-- Altri dettagli dell'annuncio -->
+                <p class="categoria card-text mb-1">
+                  {{ annuncio.categoria | categoriaConversion }} - Pubblicato il
+                  {{ annuncio.dataPubblicazione }}
+                </p>
+                <!-- Altri campi dell'annuncio come descrizione, utente, budget, ecc. -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

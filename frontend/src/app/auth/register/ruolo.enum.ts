@@ -1,0 +1,5 @@
+export enum Ruolo {
+  AZIENDA = 'AZIENDA',
+  PRIVATO = 'PRIVATO',
+  SVILUPPATORE = 'SVILUPPATORE',
+}
